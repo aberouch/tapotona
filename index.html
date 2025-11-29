@@ -1,13 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>My Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Menu Style</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #141414;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 70px;
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            gap: 25px;
+        }
+
+        .sidebar img.icon {
+            width: 30px;
+            opacity: 0.7;
+            cursor: pointer;
+        }
+
+        .sidebar img.icon:hover {
+            opacity: 1;
+        }
+
+        /* Hero section */
+        .hero {
+            margin-left: 70px;
+            height: 60vh;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent),
+                url('https://via.placeholder.com/1600x900') center/cover no-repeat;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0 0 10px;
+        }
+
+        .hero p {
+            width: 50%;
+            font-size: 1.2rem;
+            line-height: 1.4;
+            max-width: 600px;
+        }
+
+        /* Row section */
+        .row {
+            margin-left: 90px;
+            margin-top: 20px;
+        }
+
+        .row h2 {
+            margin-bottom: 10px;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+        }
+
+        .thumbnail {
+            width: 220px;
+            height: 130px;
+            background-color: #333;
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                width: 80%;
+                font-size: 1rem;
+            }
+
+            .thumbnail {
+                width: 180px;
+                height: 110px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .sidebar {
+                width: 55px;
+            }
+
+            .hero {
+                margin-left: 55px;
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                width: 95%;
+                font-size: 0.95rem;
+            }
+
+            .row {
+                margin-left: 70px;
+            }
+
+            .thumbnail {
+                width: 150px;
+                height: 90px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .hero {
+                height: 50vh;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .thumbnail {
+                width: 130px;
+                height: 80px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Hello world!</h1>
+
+    <div class="sidebar">
+        <img class="icon" src="https://img.icons8.com/ios-glyphs/30/home.png" />
+        <img class="icon" src="https://img.icons8.com/ios-glyphs/30/search--v1.png" />
+        <img class="icon" src="https://img.icons8.com/ios-glyphs/30/clapperboard.png" />
+        <img class="icon" src="https://img.icons8.com/ios-glyphs/30/like--v1.png" />
+        <img class="icon" src="https://img.icons8.com/ios-glyphs/30/settings.png" />
+    </div>
+
+    <div class="hero">
+        <h1>Sample Series Title</h1>
+        <p>Months after a shocking event, new mysteries unfold and the truth becomes harder to find as everyone becomes
+            a suspect.</p>
+    </div>
+
+    <div class="row">
+        <h2>Coming This Week</h2>
+        <div class="thumbnails">
+            <div class="thumbnail" style="background-image:url('https://via.placeholder.com/400x250?text=Movie+1');">
+            </div>
+            <div class="thumbnail" style="background-image:url('https://via.placeholder.com/400x250?text=Movie+2');">
+            </div>
+            <div class="thumbnail" style="background-image:url('https://via.placeholder.com/400x250?text=Movie+3');">
+            </div>
+            <div class="thumbnail" style="background-image:url('https://via.placeholder.com/400x250?text=Movie+4');">
+            </div>
+            <div class="thumbnail" style="background-image:url('https://via.placeholder.com/400x250?text=Movie+5');">
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
